@@ -1,0 +1,21 @@
+{
+    
+    "101":{
+        "que":"F QUALIFICATION",
+        "type":"4choice",
+        "choices":["10 or Below","12 or Below","Graduate or Below","PG or Below"],
+        "wt":"4"
+    },
+    "201":{
+        "que":"M QUALIFICATION",
+        "type":"4choice",
+        "choices":["10 or Below","12 or Below","Graduate or Below","PG or Below"],
+        "wt":"4"
+    },
+    "301":{
+        "que":"CITY",
+        "type":"3choice",
+        "choices":["metro", "Tier 1", "Tier 2"],
+        "wt":"4"
+    }
+}

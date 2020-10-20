@@ -1,0 +1,11 @@
+GET  http://localhost:5000/note_response
+Content-Type: application/json
+{
+    "name":"Harsh",
+    "responses":{
+        "101": "1", 
+        "201": "3",
+        "301": "0"
+    }
+}
+
