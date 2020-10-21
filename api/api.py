@@ -2,18 +2,14 @@ import flask
 from flask import request, jsonify
 import sqlite3
 import requests
-# import data
 import os
+import flask_monitoringdashboard as dashboard
+
 
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
-# app.config["HOST"] ="0.0.0.0"
-
-# app.config["PORT"]=300
-
-
-
+dashboard.bind(app)
 
 
 @app.route('/dev',methods=['GET','POST','HS'])
@@ -26,11 +22,6 @@ def hs():
     os.system(cmd)
     return "<h1> " + msg + "!!!</h1>"
 
-
-# @app.after_request
-# def add_headers(response):
-#     response.headers.add('Access-Control-Allow-Origin', '*')
-#     response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
 
 @app.route('/echo/<message>',methods=['GET','POST','HS'])
 def url_echo(message):
@@ -72,4 +63,5 @@ def page_not_found(e):
     return "<h1><strong>FUCK OFF !!!</strong></h1>", 404
 
 
-app.run()
+app.run(host="0.0.0.0",port=80)
+# app.run()
