@@ -83,7 +83,6 @@ def del_all_containers():
 def all_containers():
     temp=[]
     for c in client.containers.list(filters={'ancestor':data.DOCKER_IMAGES}):
-        print(c)
         for i in client.df()['Containers']:
             if i['Id'] == c.id:
                 break
