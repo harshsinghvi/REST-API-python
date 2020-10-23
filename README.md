@@ -11,4 +11,4 @@ creds.py  file will be used for storing credentials.
 - production deployment of `stack api` and `que api` with mongo db on heroku **`heroku`**   
 - assisment api with mongo db (Testing) 
 - basic api calls methods
-- docker api (Testing)
+- docker api using [code cerver](https://hub.docker.com/r/codercom/code-server) 

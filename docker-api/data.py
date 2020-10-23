@@ -1,5 +1,3 @@
-users=[]
+DOCKER_IMAGES=["code:v1"]
 
-exercise=[]
-
-containers=[]
+DEFAULT_DOCKER_IMAGE=DOCKER_IMAGES[0]
