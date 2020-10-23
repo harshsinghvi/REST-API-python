@@ -7,9 +7,6 @@ from flask import request
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
-
-
-
 ## DOCKER CONFIG 
 # client = docker.from_env() ## for local docker host 
 client = docker.DockerClient(base_url=creds.DOCKER_REMOTE_HOST) ## for remote docker host
@@ -22,10 +19,15 @@ def hello_world():
 @app.route('/version',methods=['GET'])
 def docker_version():
     return client.version()
-    # response = flask.Response()
-    # response.headers['Content-Type']="application/json"
-    # response.response = client.version()
-    # return response
+@app.route('/pull-images',methods=['GET'])
+def pull_images():
+    temp=[]
+    for image in data.DOCKER_IMAGES:
+        try:
+            temp.append(str(client.images.pull(image)))
+        except docker.errors.ImageNotFound:
+            temp.append(image+" : notfound")
+    return {"images":temp}
 
 @app.route('/info',methods=['GET'])
 def info():
