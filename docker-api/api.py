@@ -21,10 +21,11 @@ def hello_world():
 
 @app.route('/version',methods=['GET'])
 def docker_version():
-    response = flask.Response()
-    response.headers['Content-Type']="application/json"
-    response.response = str(client.version())
-    return response
+    return client.version()
+    # response = flask.Response()
+    # response.headers['Content-Type']="application/json"
+    # response.response = client.version()
+    # return response
 
 @app.route('/info',methods=['GET'])
 def info():
