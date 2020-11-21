@@ -1,0 +1,19 @@
+    a={}
+    b={}
+    result=0
+
+    for i in s1:
+        try:
+            a[i]=a[i]+1
+        except KeyError:
+            a[i]=1
+    for i in s2:
+        try:
+            b[i]=b[i]+1
+        except KeyError:
+            b[i]=1
+    
+    for i in c:
+        if a[i]>0 and :
+            result = result + 1
+    return result
