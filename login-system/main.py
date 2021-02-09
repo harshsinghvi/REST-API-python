@@ -27,6 +27,17 @@ def logout():
         session.pop(d, None)
     return redirect(url_for('index'))
 
+@app.route('/api-auth-test')
+def apitestauth():
+    data = {
+            "test": 'no'
+    }
+    if session['username']:    
+        data = {
+            "test": session['username']
+        }
+    return data 
+
 @app.route('/test-auth',methods=['GET','POST'])
 def auth():
     if session['username']=='harsh':

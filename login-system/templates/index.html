@@ -4,16 +4,27 @@
     <title>Cloud Desktop</title>
 </head>
 <body>
+    <script>
+        async function main(){
+        var url = "http://localhost:5000/api-auth-test";
+        const response = await fetch(url);
+        var data = await response.json();
+        document.getElementById("test").innerHTML="test = "+data['test'];
+        console.log(data);
+        } 
+    </script>
 
-<h1>Welcome to Cloud Desktop</h1>
-<a href="/login"><h2>Login to Continue</h2></a>
+    <h1>Welcome to Cloud Desktop</h1>
+    <a href="/login"><h2>Login to Continue</h2></a>
 
-<form action = "login" method = "post">
-    <p>username : <input type = text name = username> </p>
-    <p>password : <input type = text name = password> </p>
-    <p> <input type = submit value = Login> </p>
-</form>	
-   
+    <form action = "login" method = "post">
+        <p>username : <input type = text name = username> </p>
+        <p>password : <input type = text name = password> </p>
+        <p> <input type = submit value = Login> </p>
+    </form>	
+
+    <button onclick="main()">test</button> 
+    <h3 id="test"> Loading </h3>
 
 </body>
 </html>
