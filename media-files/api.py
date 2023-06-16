@@ -1,4 +1,5 @@
 from flask import Flask, request
+from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'Superrandom'
@@ -14,7 +15,7 @@ def file():
 
 
     print(a)
-    a.save('./store/'+a.filename)
+    a.save('./data/'+str(datetime.now())+"-" +  a.filename)
 
     # f = open("test.jpg", 'wb')
     # f.write(a.read())
